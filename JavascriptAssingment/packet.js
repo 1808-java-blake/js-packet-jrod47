@@ -19,6 +19,7 @@ function fib(n) {
     return fib(n -1) + fib(n-2);
 }
 console.log(fib(5));
+console.log('');
 
 // 2. Bubble Sort
 // Define function: bubbleSort(numArray)
@@ -38,6 +39,7 @@ function bubbleSort(numArray) {
     return numArray;
 }
 console.log(bubbleSort([10,9,8,7,6,5,4,3,2,1]));
+console.log('');
 
 // 3. Reverse String
 // Define function: reverseStr(someStr)
@@ -54,6 +56,7 @@ function reverseStr(someStr){
 }
 
 console.log(reverseStr("Hello My name is Josue"));
+console.log('');
 
 // 4. Factorial
 // Define function: factorial(someNum)
@@ -73,6 +76,7 @@ function factorial(someNum){
 }
 
 console.log(factorial(5));
+console.log('');
 
 // 5. Substring
 // Define function substring(someStr, length, offset)
@@ -97,14 +101,27 @@ function isEven(someNum){
         return 'Even';
     }
 }
-
-
-
 console.log(isEven(3333333));
+console.log('');
 
 // 7. Palindrome
 // Define function isPalindrome(someStr)
 // Return true if someStr is a palindrome, otherwise return false
+
+function isPalindrome(someStr){
+    let eliminate = /[^A-Za-z0-9]/g;
+
+    someStr = someStr.toLowerCase().replace(eliminate, ""); 
+
+    for(let j =0; j < someStr.length/2; j++){
+        if(someStr[j] !== someStr[someStr.length - 1 - j]){
+            return 'It is not Palindrome';
+        }
+    }
+    return 'It is Palindrome';
+}
+console.log(isPalindrome('aaabaaaa'));
+console.log('');
 
 // 8. Shapes
 // Define function: printShape(shape, height, character)
@@ -127,6 +144,11 @@ console.log(isEven(3333333));
 // *****
 //  ***
 //   *
+function printShape(shape, height, character){
+    if(shape === 'Triangle'){
+        
+    }
+}
 
 // 9. Object literal
 // Define function traverseObject(someObj)
@@ -158,6 +180,7 @@ function Person(name, age){
 
 let john = new Person("John", 30);
 console.log(john);
+console.log('');
 
 // 13. Defining an object using an object literal
 // Define function getPerson(name, age)
@@ -165,12 +188,16 @@ console.log(john);
 // 	var john = getPerson("John", 30);
 
 function getPerson(name, age){
-    name: 'John'
-    age: 30
+    let getNewPerson = {
+        name: 'John',
+        age: 30
+    }
+    return getNewPerson;
 }
 
 let johnn = getPerson("John", 30)
 console.log(johnn)
+console.log('');
 
 // -----------------------------------------------------------------------------------
 // PART II
@@ -186,10 +213,21 @@ console.log(johnn)
 // Define function getUSA()
 // Find the html element that contains "USA".
 // Print that element's contents.
-  
+
+// function getUSA(){
+//     let usa = document.get
+// }
+
 // 2. Sales
 // Define function getPeopleInSales()
 // Print the names of all the people in the sales department.
+// function getPeopleInSales(){
+//     let peopleInSales = document.getElementsByClassName("empName");
+//     let values = peopleInSales[0].value;
+    
+    
+// }
+// console.log(getPeopleInSales());
   
 // 3. Click Here
 // Define function getAnchorChildren()
